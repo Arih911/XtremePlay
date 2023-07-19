@@ -1,0 +1,30 @@
+<%- include("./partials/head") %>
+    <link rel="stylesheet" href="/stylesheets/player.css">
+    </head>
+
+    <body>
+        <%- include("./partials/navbar") %>
+            <div class="container">
+                <div class="heading">
+                    <h3>Currently playing -
+                        <%=movieName%>
+                            <% if(movie.description) {%>
+                                (<%=movie.description %>)
+                                    <% } %>
+                    </h3>
+                </div>
+                <div class="player">
+                    <video controls="true" autoplay src="<%=movie.url  %>"></video>
+                </div>
+            </div>
+            <div class="controls">
+                <form action="/goBack/<%=movie.name%>/<%=movieName%>" method="get">
+                   <strong>Go back : <button>Click Here</button></strong> 
+                </form>
+                <form action="/home" method="get">
+                    <strong> Homescreen : <button>Click Here</button></strong>
+                </form>
+            </div>
+    </body>
+
+    </html>

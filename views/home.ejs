@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    
+</head>
+
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="navlogo">
+            <h2 >XtremePlay</h2>
+        </div>
+        <div class="navmenu">
+            <form action="/watchShow" method="post">
+                <input type="text" name="searchedMovie" id="" placeholder="Search movie here">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<section class="main">
+    <h1 class="logo">
+        XtremePlay
+    </h1>
+    
+    <p>Yo guys, the most aesthetic website to stream movies and webseries is here.</p>
+
+</section>
+
+<!-- <div class="showList">
+    <p>Shows currently available to watch</p>
+    <div class="gridList">
+        <% for(let movie of movieList) {%>
+                <h2><%= movie.name %></h2>
+                <p><%=movie.description %></p>
+                <form action="/watchShow/<%=movie.name%>/<%=movie._id%>" method="get">
+                <button>Watch Show</button>
+                </form>
+        <% } %>
+    </div>
+</div> -->
+
+</body>
+
+</html>

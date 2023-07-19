@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/stylesheets/showpage.css">
+<%- include("./partials/head")  %>
+</head>
+
+<body>
+    <%- include("./partials/navbar")  %>
+    <div class="resultDiv">
+        <h2>Showing results for - <%= movieName %>
+        </h2>
+        <p>Show Name : <%=movieName%></p>
+        <p>Show Length : <%=results.length%> Episodes</p>  
+        <div class="resultBackground">
+
+            <ul>
+                <% for(let movie of results) {%>
+                    <div class="resultList">
+                        <li>
+                            Available episodes : <%=movie.description %>
+                        </li>
+                        <li>
+                            <form action="/watchShow/<%=movieName%>/<%=movie._id %>" method="get">
+                                <button type="submit">Watch Show</button>
+                            </form>
+                        </li>
+                    </div>
+                    <% } %>
+                </ul>
+            </div>
+            <form action="/home" method="get">
+                <button>Go Back</button>
+            </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image: url("/bgImg/otherBg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+.player{
+    margin-top: 30px;
+    text-align: center;
+}
+
+video{
+    /* width: 35vw;
+    height: 30vh; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container , .controls{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.controls{
+    margin-top: 30px;
+}
+
+.controls > form{
+    margin-top: 10px;
+}

@@ -1,0 +1,62 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    border: none;
+    margin-top: 5px;
+    font-family:inherit;
+    border-radius:10px;
+    padding: 5px;
+    transition: all 0.3s;
+}
+
+button{
+    padding : 5px;
+    font-family:inherit;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s;
+}
+
+button:hover{
+    background-color: black;
+    color: white;
+}
+
+input:focus{
+    color: black;
+}
+
+
+@media all and (max-width : 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navlogo {
+        text-align: center;
+    }
+    
+    input {
+        width: 150px;
+        margin-top: 10px;
+    }
+}
+
+

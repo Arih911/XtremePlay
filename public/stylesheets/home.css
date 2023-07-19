@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("/bgImg/homeBg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+}
+
+.main{
+    margin-top: 150px;
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+}
+
+
+input {
+    border: none;
+    margin-top: 5px;
+    font-family:inherit;
+    border-radius:10px;
+    padding: 5px;
+    transition: all 0.3s;
+}
+
+button{
+    padding : 5px;
+    font-family:inherit;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s;
+}
+
+button:hover{
+    background-color: black;
+    color: white;
+}
+
+input:focus{
+    color: black;
+}
+
+.main >p {
+    padding: 0px 10px;
+    font-size: 18px;
+}
+
+.showList{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.gridList{
+    width: 80%;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+@media all and (max-width : 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navlogo {
+        text-align: center;
+    }
+    
+    input {
+        width: 150px;
+        margin-top: 10px;
+    }
+}
+
