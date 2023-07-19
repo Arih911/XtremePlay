@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 const dbUrl = process.env.DB_URL;
-mongoose.connect(dbUrl);
+mongoose.connect(dbUrl || 'mongodb://127.0.0.1/moviesDB') ;
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
