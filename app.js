@@ -27,7 +27,7 @@ db.once("open", function () {
 
 
 
-app.get("/home", async (req, res) => {
+app.get("/", async (req, res) => {
     const movieList = await Movie.find({});
     // console.log(movieList)
     res.render("home.ejs", {movieList});
