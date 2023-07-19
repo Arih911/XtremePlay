@@ -56,19 +56,40 @@ app.get("/goBack/:name/:movieName", async (req, res)=>{
 });
 
 
-// app.get("/create", async (req, res)=>{
-    
-//     for(let i=0;i<5;i++){
-//         const temp = new Movie({
-//             name : "Sherlock Holmes",
-//             description : `s02 e0${i}`,
-//             url : "https://ia904506.us.archive.org/25/items/the-family-man-s-02-e-09/The%20Family%20Man%20S02E01.mp4"
-//         });    
+app.get("/create", async (req, res)=>{
+    res.render("new.ejs");
+});
 
-//         await temp.save();
-//     }
-//     res.send("succesfull..");
-// });
+app.get("/delete", async (req, res)=>{
+    const movieList = await Movie.find({});
+    res.render("delete.ejs", {movieList});
+});
+
+
+app.get("/deleteShow/:id", async (req, res)=>{
+    const {id} = req.params;
+    await Movie.findByIdAndDelete({_id:id});
+    const movieList = await Movie.find({});
+    // console.log(id);
+    res.render("delete", {movieList});
+})
+
+
+
+app.post("/create", async (req, res)=>{
+    const {name, url} = req.body;
+    let description;
+    if(req.body.description){
+        description = req.body.description;
+    }
+    const movie = await new Movie({name: name ,url : url});
+    if(description){
+        movie.description = description;
+    }
+    await movie.save();
+    console.log("success")
+    res.redirect("create");
+});
 
 app.listen(3000, (req, res) => {
     console.log("listening");

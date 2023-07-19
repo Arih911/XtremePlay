@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="showList">
+    <p>Shows currently available to watch</p>
+    <div class="gridList">
+        <% for(let movie of movieList) {%>
+            <h2><%= movie.name %></h2>
+            <p><%=movie.description %></p>
+            <form action="/deleteShow/<%=movie._id%>" method="get">
+            <button>Delete Show</button>
+            </form>
+    <% } %>
+</div>
+</div>
+</body>
+</html>
