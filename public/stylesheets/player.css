@@ -36,3 +36,25 @@ video{
 .controls > form{
     margin-top: 10px;
 }
+
+.controls > form{
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.3px);
+    -webkit-backdrop-filter: blur(3.3px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 10px 15px;
+    width: 250px;
+}
+
+@media all and (max-width : 600px) {
+    video{
+        width: 320px;
+        height: 200px;
+    }
+    .player{
+        
+        text-align: center;
+    }
+}

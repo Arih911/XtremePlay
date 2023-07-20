@@ -46,7 +46,7 @@ app.post("/watchShow",  async (req, res) => {
         }
         movieName = movieName.trimEnd();
         const results = await Movie.find({name : movieName});
-        console.log(movieName, "found.........")
+        // console.log(movieName, "found.........")
         res.render("resultPage.ejs", {results, movieName});
     } catch (error) {
         console.log(error, "caused..........");
@@ -68,9 +68,9 @@ app.get("/watchShow/:movieName/:id", async(req, res)=>{
 
 app.get("/goBack/:name/:movieName", async (req, res)=>{
     try {
+        const {name, movieName} = req.params;
         const results = await Movie.find({name:name});
         res.render("resultPage.ejs", {results, movieName});
-        const {name, movieName} = req.params;
         
     } catch (error) {
         console.log(error);

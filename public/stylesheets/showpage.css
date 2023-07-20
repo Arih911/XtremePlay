@@ -53,6 +53,12 @@ body {
 
 
 @media all and (max-width : 600px) {
-    
+    .resultDiv> h2{
+        font-size: 20px;
+    }
+    .resultList  {
+        height: 60px;
+        padding: 10px 20px;
+    }
 }
 

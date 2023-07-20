@@ -6,12 +6,12 @@
         <%- include("./partials/navbar") %>
             <div class="container">
                 <div class="heading">
-                    <h3>Currently playing -
+                    <h2>Currently playing -
                         <%=movieName%>
                             <% if(movie.description) {%>
                                 (<%=movie.description %>)
                                     <% } %>
-                    </h3>
+                    </h2>
                 </div>
                 <div class="player">
                     <video controls="true" autoplay src="<%=movie.url  %>"></video>
@@ -21,7 +21,7 @@
                 <form action="/goBack/<%=movie.name%>/<%=movieName%>" method="get">
                    <strong>Go back : <button>Click Here</button></strong> 
                 </form>
-                <form action="/home" method="get">
+                <form action="/" method="get">
                     <strong> Homescreen : <button>Click Here</button></strong>
                 </form>
             </div>
