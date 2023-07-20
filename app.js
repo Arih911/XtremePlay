@@ -60,7 +60,7 @@ app.get("/watchShow/:movieName/:id", async(req, res)=>{
         const {id, movieName} = req.params;
         const movie = await Movie.findById(id);
         
-        res.render("player", {movie, movieName});
+        res.render("player.ejs", {movie, movieName});
     } catch (error) {
         console.log(error);
     }
@@ -69,7 +69,7 @@ app.get("/watchShow/:movieName/:id", async(req, res)=>{
 app.get("/goBack/:name/:movieName", async (req, res)=>{
     try {
         const results = await Movie.find({name:name});
-        res.render("resultPage", {results, movieName});
+        res.render("resultPage.ejs", {results, movieName});
         const {name, movieName} = req.params;
         
     } catch (error) {
@@ -100,7 +100,7 @@ app.get("/deleteShow/:id", async (req, res)=>{
        await Movie.findByIdAndDelete({_id:id});
        const movieList = await Movie.find({});
        // console.log(id);
-       res.render("delete", {movieList});
+       res.render("delete.ej", {movieList});
     
    } catch (error) {
      console.log(error);
@@ -128,9 +128,9 @@ app.post("/create", async (req, res)=>{
     }
 });
 
-app.all("*", (req, res, next)=>{
-    console.log("page not found");
-});
+// app.all("*", (req, res, next)=>{
+//     console.log("page not found");
+// });
 
 app.listen(3000, (req, res) => {
     console.log("listening");
