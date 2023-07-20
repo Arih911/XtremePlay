@@ -20,14 +20,14 @@ const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl || 'mongodb://127.0.0.1/moviesDb') ;
 
 const db = mongoose.connection;
-db.on("error", function(){console.log("connection failed........")});
+db.on("error", console.error.bind(console, "connection error caused........ "));
 db.once("open", function () {
     console.log("Connected successfully");
 });
 
 
 
-app.get("/", (req, res) => {
+app.get("/",  (req, res) => {
     try {
         res.render("home.ejs");
     } catch (error) {
