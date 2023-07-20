@@ -45,9 +45,9 @@ app.post("/watchShow",  async (req, res) => {
             movieName += `${part.charAt(0).toUpperCase()}${part.substring(1)} `;
         }
         movieName = movieName.trimEnd();
-        // console.log(movieName)
+        console.log(movieName, "found.........")
         const results = await Movie.find({name : movieName});
-        res.render("resultPage", {results, movieName});
+        res.render("resultPage.ejs", {results, movieName});
     } catch (error) {
         console.log(error);
     }
